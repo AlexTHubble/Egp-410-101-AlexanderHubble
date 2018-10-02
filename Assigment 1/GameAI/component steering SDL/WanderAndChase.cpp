@@ -1,8 +1,8 @@
 #include <cassert>
 
 #include "WanderAndChase.h"
-//#include "SeekSteering.h"
-#include "Arrive.h"
+#include "SeekSteering.h"
+//#include "seek.h"
 #include "WanderSteering.h"
 #include "Game.h"
 #include "UnitManager.h"
@@ -34,7 +34,7 @@ Steering * WanderAndChase::getSteering()
 	float distance = direction.getLength();
 
 	WanderSteering * wanderSteering = new WanderSteering(mOwnerID, mTargetID);
-	Arrive * arriveSteering = new Arrive(mOwnerID, mTargetLoc, mTargetID);
+	SeekSteering * seekSteering = new SeekSteering(mOwnerID, mTargetLoc, mTargetID);
 	FaceSteering * faceSteering = new FaceSteering(mOwnerID, mTargetLoc, mTargetID);
 
 	if (distance > mDetectionRadius) //If outside radius wander...
@@ -47,18 +47,18 @@ Steering * WanderAndChase::getSteering()
 	else //Else seek and face
 	{
 		Steering * faceSteeringData = faceSteering->getSteering();
-		Steering * arriveSteeringData = arriveSteering->getSteering();
+		Steering * seekSteeringData = seekSteering->getSteering();
 
 		PhysicsData facePhysicsData = faceSteeringData->getData();
-		PhysicsData arrivePhysicsData = arriveSteeringData->getData();
-		data.acc = arrivePhysicsData.acc;
+		PhysicsData seekPhysicsData = seekSteeringData->getData();
+		data.acc = seekPhysicsData.acc;
 		data.rotAcc = facePhysicsData.rotAcc;
 		data.rotVel = facePhysicsData.rotVel;
 	}
 
 
 	delete wanderSteering;
-	delete arriveSteering;
+	delete seekSteering;
 	delete faceSteering;
 
 	this->mData = data;

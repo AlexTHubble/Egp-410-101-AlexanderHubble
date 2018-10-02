@@ -1,3 +1,44 @@
-﻿  WanderAndChase.cpp
-c:\users\ahubb\documents\github\egp-410\gameai\component steering sdl\wandersteering.h(20): warning C4305: 'initializing': truncation from 'double' to 'float'
-  steering.vcxproj -> C:\Users\ahubb\Documents\GitHub\EGP-410\GameAI\component steering SDL\Debug\steering.exe
+﻿  WanderSteering.cpp
+c:\users\ahubb\desktop\assigment 1\gameai\component steering sdl\wandersteering.h(20): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\ahubb\desktop\assigment 1\gameai\component steering sdl\wandersteering.cpp(9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  WanderAndChase.cpp
+c:\users\ahubb\desktop\assigment 1\gameai\component steering sdl\wandersteering.h(20): warning C4305: 'initializing': truncation from 'double' to 'float'
+  UnitManager.cpp
+  Unit.cpp
+  SteeringComponent.cpp
+c:\users\ahubb\desktop\assigment 1\gameai\component steering sdl\wandersteering.h(20): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Steering.cpp
+  SpriteManager.cpp
+  Sprite.cpp
+  SpawnRandomEnemyMessage.cpp
+  SeekSteering.cpp
+  Arrive.cpp
+c:\users\ahubb\desktop\assigment 1\gameai\component steering sdl\arrive.cpp(86): warning C4305: 'argument': truncation from 'double' to 'float'
+  Renderer.cpp
+  PositionComponent.cpp
+  PlayerMoveToMessage.cpp
+  PhysicsComponent.cpp
+  main.cpp
+  InputSystem.cpp
+  GraphicsSystem.cpp
+  GraphicsBufferManager.cpp
+  GraphicsBuffer.cpp
+  Generating Code...
+  Compiling...
+  GameMessageManager.cpp
+  GameMessage.cpp
+  Game.cpp
+  Font.cpp
+  FaceSteering.cpp
+c:\users\ahubb\desktop\assigment 1\gameai\component steering sdl\facesteering.cpp(8): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\ahubb\desktop\assigment 1\gameai\component steering sdl\facesteering.cpp(31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\ahubb\desktop\assigment 1\gameai\component steering sdl\facesteering.cpp(58): warning C4305: '/=': truncation from 'double' to 'float'
+  ExitGameMessage.cpp
+  DeleteRandomUnitMessage.cpp
+  ComponentManager.cpp
+  Component.cpp
+  Color.cpp
+  ArriveAndFace.cpp
+  Generating Code...
+  LINK : C:\Users\ahubb\Desktop\Assigment 1\GameAI\component steering SDL\Debug\steering.exe not found or not built by the last incremental link; performing full link
+  steering.vcxproj -> C:\Users\ahubb\Desktop\Assigment 1\GameAI\component steering SDL\Debug\steering.exe

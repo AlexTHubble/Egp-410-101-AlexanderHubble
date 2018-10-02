@@ -43,14 +43,14 @@ Steering * FaceSteering::getSteering()
 	}
 		
 
-	if (rotationSize > mSlowRadius * DEGREE_TO_RADIAN) //If it outside the slow radius, keep rotating at max speed...
-	{
-		rotationSpeed = data.maxRotVel;
-	}
-	else //Else move at a slower speed
-	{
-		rotationSpeed = data.maxRotVel * rotationSize / (mSlowRadius * DEGREE_TO_RADIAN);
-	}
+	//if (rotationSize > mSlowRadius * DEGREE_TO_RADIAN) //If it outside the slow radius, keep rotating at max speed...
+	//{
+	//	rotationSpeed = data.maxRotVel;
+	//}
+	//else //Else move at a slower speed
+	//{
+	//	rotationSpeed = data.maxRotVel * rotationSize / (mSlowRadius * DEGREE_TO_RADIAN);
+	//}
 
 	//targetRotation *= currentRotation / rotationSize;
 

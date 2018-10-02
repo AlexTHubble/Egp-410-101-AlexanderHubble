@@ -13,5 +13,5 @@ protected:
 	virtual Steering* getSteering();
 	//Vector2D getWanderTarget();
 
-	float mDetectionRadius = 200;
+	float mDetectionRadius = 100;
 };

@@ -16,7 +16,7 @@ protected:
 	//float slowRadius = 5;
 	//float maxRotation = 10;
 	float mWanderOffSet = 100;
-	float mWanderRadius = 80;
+	float mWanderRadius = 50;
 	float mWanderRate = 2 * 3.14;
 	float mWanderOrientation = 0;
 	float mTargetOrientation = 0;

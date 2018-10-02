@@ -21,7 +21,7 @@ Steering * WanderSteering::getSteering()
 {
 	//setTargetLoc(getWanderTarget());
 	Unit* pOwner = gpGame->getUnitManager()->getUnit(mOwnerID);
-	PhysicsData data = pOwner->getPhysicsComponent()->getData();
+	PhysicsData data;
 
 	mWanderOrientation = pOwner->getFacing();
 
