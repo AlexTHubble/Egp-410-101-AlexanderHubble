@@ -41,15 +41,19 @@ Steering * Flock::getSteering()
 	Steering* wanderSteering = mWanderSteering->getSteering();
 	data = wanderSteering->getData();
 
-	tempX = data.acc.getX() + allignVector.getX() * mAllignWeight + cohesionVector.getX() * mCohesionWeigth + seperationVector.getX() * mSeperationWeight;
-	tempY = data.acc.getY() + allignVector.getY() * mAllignWeight + cohesionVector.getY() * mCohesionWeigth + seperationVector.getY() * mSeperationWeight;
+	//data.acc.normalize();
+
+	tempX = data.vel.getX() + (allignVector.getX() * mAllignWeight) + (cohesionVector.getX() * mCohesionWeigth) + (seperationVector.getX() * mSeperationWeight);
+	tempY = data.vel.getY() + (allignVector.getY() * mAllignWeight) + (cohesionVector.getY() * mCohesionWeigth) + (seperationVector.getY() * mSeperationWeight);
 
 
 	Vector2D newAcceleration = Vector2D(tempX, tempY);
 
 	//newVelocity.normalize();
 
-	data.acc = newAcceleration;
+	data.vel = newAcceleration;
+
+	//data.vel.normalize();
 
 	//data.vel = newVelocity * data.maxSpeed;
 	//data.vel.normalize();

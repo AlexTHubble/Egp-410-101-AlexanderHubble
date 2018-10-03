@@ -31,12 +31,12 @@ void InputSystem::update()
 
 	SDL_PumpEvents();
 
-	if (SDL_GetMouseState(&x, &y) & SDL_BUTTON(SDL_BUTTON_LEFT))
-	{
-		Vector2D pos(x, y);
-		GameMessage* pMessage = new PlayerMoveToMessage(pos);
-		mpMessageManager->addMessage(pMessage, 0);
-	}
+	//if (SDL_GetMouseState(&x, &y) & SDL_BUTTON(SDL_BUTTON_LEFT))
+	//{
+	//	Vector2D pos(x, y);
+	//	GameMessage* pMessage = new PlayerMoveToMessage(pos);
+	//	mpMessageManager->addMessage(pMessage, 0);
+	//}
 
 
 
@@ -44,9 +44,9 @@ void InputSystem::update()
 		//get keyboard state
 		const Uint8 *state = SDL_GetKeyboardState(NULL);
 
-		if (state[SDL_SCANCODE_RETURN])
+		if (state[SDL_SCANCODE_A])
 		{
-			GameMessage* pMessage = new SpawnRandomEnemyMessage(mpUnitManager,mpSpriteManager,mAiSpriteID);
+			GameMessage* pMessage = new SpawnRandomEnemyMessage(mpUnitManager,mpSpriteManager,mAiSpriteID, 10);
 			mpMessageManager->addMessage(pMessage, 0);
 		}
 

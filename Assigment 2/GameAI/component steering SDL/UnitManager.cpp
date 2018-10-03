@@ -76,9 +76,10 @@ Unit* UnitManager::createRandomUnit(const Sprite& sprite)
 	{
 		//pUnit->setSteering(Steering::SEEK, Vector2D(rand() % gpGame->getGraphicsSystem()->getWidth(), rand() % gpGame->getGraphicsSystem()->getHeight()));
 		UnitID playerId = PLAYER_UNIT_ID;
+		pUnit->setShowTarget(true);
 		pUnit->setSteering(Steering::FLOCK, NULL, playerId);
 		//pUnit->getSteeringComponent()->getSteeringPart()->setUnitManager(this); //Since flocking this will set up the unit manager
-		pUnit->setShowTarget(true);
+		
 	}
 	return pUnit;
 }

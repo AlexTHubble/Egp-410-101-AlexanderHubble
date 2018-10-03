@@ -15,9 +15,9 @@ protected:
 	//float mTargetRotationRadius = 5;
 	//float slowRadius = 5;
 	//float maxRotation = 10;
-	float mWanderOffSet = 100;
-	float mWanderRadius = 50;
-	float mWanderRate = 2 * 3.14;
+	float mWanderOffSet = 100.0f;
+	float mWanderRadius = 50.0f;
+	float mWanderRate = 0.8f;
 	float mWanderOrientation = 0;
 	float mTargetOrientation = 0;
 	Vector2D mTarget;

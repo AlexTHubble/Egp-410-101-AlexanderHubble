@@ -9,7 +9,7 @@ public:
 	virtual Steering* getSteering();
 protected:
 
-	float mTargetRotationRadius = 5;
-	float mSlowRadius = 5;
-	float mMaxRotation = 10;
+	float mTargetRotationRadius = 0.1f;
+	float mSlowRadius = 0.5f;
+	//float mMaxRotation = 10;
 };

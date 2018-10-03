@@ -1,6 +1,4 @@
-﻿  Cohesion.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  SteeringComponent.cpp
-  FlockSteering.cpp
+﻿  FlockSteering.cpp
+c:\users\ahubb\documents\github\egp-410-\assigment 2\gameai\component steering sdl\flocksteering.h(24): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\ahubb\documents\github\egp-410-\assigment 2\gameai\component steering sdl\flocksteering.h(26): warning C4305: 'initializing': truncation from 'double' to 'float'
   steering.vcxproj -> C:\Users\ahubb\Documents\GitHub\Egp-410-\Assigment 2\GameAI\component steering SDL\Debug\steering.exe

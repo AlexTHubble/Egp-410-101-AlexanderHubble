@@ -11,5 +11,5 @@ public:
 	Vector2D getCohesion();
 protected:
 
-	float mNeighborRadius = 300;
+	float mNeighborRadius = 600;
 };

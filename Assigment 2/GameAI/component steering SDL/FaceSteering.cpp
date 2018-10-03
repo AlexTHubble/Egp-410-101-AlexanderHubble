@@ -3,6 +3,7 @@
 #include "Game.h"
 #include "UnitManager.h"
 #include "Unit.h"
+#include <math.h>
 
 
 const float PI = 3.1456;
@@ -22,55 +23,83 @@ Steering * FaceSteering::getSteering()
 
 	Unit* pOwner = gpGame->getUnitManager()->getUnit(mOwnerID);
 	Vector2D direction = mTargetLoc - pOwner->getPositionComponent()->getPosition();
-	float rotationToTarget = atan2(direction.getY(), direction.getX()) + .5f * PI;
+	//float rotationToTarget = atan2(direction.getY(), direction.getX()) + .5f * PI;
 	PhysicsData data = pOwner->getPhysicsComponent()->getData();
 
 	//Vector2D rotation = mTargetFacing - pOwner->getFacing();
 
 	//Converts to a 2Pi interval
 	float currentRotation = fmod(pOwner->getFacing(), 2.0 * PI);
-	float rotationSize = rotationToTarget - currentRotation;
+	float rotationSize; // = rotationToTarget - currentRotation;
 	float rotationSpeed = 0;
+	float rotationTarget = 0;
+
+	float angle = (atan2(direction.getY(), direction.getX()) + (PI / 2)) - pOwner->getFacing();
+	
+	float convertion = fmod((angle), 2.0 * PI);
+	if (convertion > PI)
+	{
+		convertion - PI;
+		convertion *= -1.0;
+	}
+	else if (convertion < -PI)
+	{
+		convertion + PI;
+		convertion *= -1.0;
+	}
+
+	angle = convertion;
+
+	rotationSize = abs(angle);
 
 	//std::cout << currentRotation * RADIAN_TO_DEGREE << "\t" << rotationToTarget*RADIAN_TO_DEGREE << std::endl;
 
-	if (abs(rotationSize) < mTargetRotationRadius * DEGREE_TO_RADIAN) //If facing target, stop rotation
+	if (rotationSize < mTargetRotationRadius) //If facing target, stop rotation
 	{
 		data.rotAcc = 0;
 		data.rotVel = 0;
 		this->mData = data;
 		return this;
 	}
-		
 
-	//if (rotationSize > mSlowRadius * DEGREE_TO_RADIAN) //If it outside the slow radius, keep rotating at max speed...
-	//{
-	//	rotationSpeed = data.maxRotVel;
-	//}
-	//else //Else move at a slower speed
-	//{
-	//	rotationSpeed = data.maxRotVel * rotationSize / (mSlowRadius * DEGREE_TO_RADIAN);
-	//}
+	if (rotationSize > mSlowRadius)
+	{
+		rotationTarget = data.maxRotAcc;
+	}
+	else
+	{
+		rotationTarget = data.maxRotAcc * rotationSize / mSlowRadius;
+	}
 
-	//targetRotation *= currentRotation / rotationSize;
+	rotationTarget *= angle / rotationSize;
 
-	data.rotAcc = rotationToTarget - pOwner->getFacing();
+	data.rotAcc = rotationTarget - data.rotVel;
 	data.rotAcc /= 0.1;
 
-	if (data.rotAcc > data.maxRotAcc) //If rotatating too fast, slow down
+	float anglularAccleration = abs(data.rotAcc);
+
+	if (anglularAccleration > data.maxRotAcc)
 	{
-		data.rotAcc /= abs(data.rotAcc);
+		data.rotAcc /= anglularAccleration;
 		data.rotAcc *= data.maxRotAcc;
 	}
 
-	if (rotationSize > 0) //If the rotation is needed to go in a positive direction, move in a positive direction
-	{
-		data.rotAcc = abs(data.rotAcc);
-	}
-	else if (rotationSize < 0) //If the rotation is needed to go in a negavitve direction, move in a negative direction
-	{
-		data.rotAcc = -abs(data.rotAcc);
-	}
+	data.acc = 0;
+
+	//if (data.rotAcc > data.maxRotAcc) //If rotatating too fast, slow down
+	//{
+	//	data.rotAcc /= abs(data.rotAcc);
+	//	data.rotAcc *= data.maxRotAcc;
+	//}
+
+	//if (rotationSize > 0) //If the rotation is needed to go in a positive direction, move in a positive direction
+	//{
+	//	data.rotAcc = abs(data.rotAcc);
+	//}
+	//else if (rotationSize < 0) //If the rotation is needed to go in a negavitve direction, move in a negative direction
+	//{
+	//	data.rotAcc = -abs(data.rotAcc);
+	//}
 
 	this->mData = data;
 	return this;

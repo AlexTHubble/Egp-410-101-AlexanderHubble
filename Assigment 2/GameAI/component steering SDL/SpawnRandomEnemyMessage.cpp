@@ -3,12 +3,13 @@
 #include "UnitManager.h"
 #include "SpriteManager.h"
 
-SpawnRandomEnemyMessage::SpawnRandomEnemyMessage( UnitManager* unitManager, SpriteManager* spriteManager, IDType spriteId)
+SpawnRandomEnemyMessage::SpawnRandomEnemyMessage( UnitManager* unitManager, SpriteManager* spriteManager, IDType spriteId, int numberToSpawn)
 	:GameMessage(SPAWN_RANDOM_ENEMEY)
 {
 	mpUnitManager = unitManager;
 	mpSpriteManager = spriteManager;
 	mAiSpriteId = spriteId;
+	mNumberToSpawn = numberToSpawn;
 }
 
 SpawnRandomEnemyMessage::~SpawnRandomEnemyMessage()
@@ -17,5 +18,7 @@ SpawnRandomEnemyMessage::~SpawnRandomEnemyMessage()
 
 void SpawnRandomEnemyMessage::process()
 {
-	Unit* pUnit = mpUnitManager->createRandomUnit(*mpSpriteManager->getSprite(mAiSpriteId));
+
+	for(int i = 0; i < mNumberToSpawn; i++)
+		Unit* pUnit = mpUnitManager->createRandomUnit(*mpSpriteManager->getSprite(mAiSpriteId));
 }

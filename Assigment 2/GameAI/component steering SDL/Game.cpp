@@ -48,7 +48,7 @@ Game::~Game()
 
 bool Game::init()
 {
-	srand(static_cast<unsigned>(time(NULL)));
+	//srand(static_cast<unsigned>(time(NULL)));
 
 	mShouldExit = false;
 
@@ -115,7 +115,7 @@ bool Game::init()
 	//setup units
 	//Unit* pUnit = mpUnitManager->createPlayerUnit(*pArrowSprite);
 	//pUnit->setShowTarget(true);
-	//pUnit->setSteering(Steering::ARRIVE_AND_FACE, ZERO_VECTOR2D, INVALID_UNIT_ID);
+	//pUnit->setSteering(Steering::WANDER, ZERO_VECTOR2D, INVALID_UNIT_ID);
 	//pUnit->getPositionComponent()->setPosition(Vector2D(300, 300));
 
 	//create 2 enemies

@@ -7,7 +7,7 @@
 class SpawnRandomEnemyMessage :public GameMessage
 {
 public:
-	SpawnRandomEnemyMessage(UnitManager* unitManager, SpriteManager* spriteManager, IDType spriteId);
+	SpawnRandomEnemyMessage(UnitManager* unitManager, SpriteManager* spriteManager, IDType spriteId, int numberToSpawn);
 	~SpawnRandomEnemyMessage();
 
 	void process();
@@ -17,4 +17,5 @@ private:
 	UnitManager* mpUnitManager;
 	SpriteManager* mpSpriteManager;
 	IDType mAiSpriteId;
+	int mNumberToSpawn = 1;
 };
