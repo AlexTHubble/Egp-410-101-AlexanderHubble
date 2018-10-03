@@ -64,24 +64,6 @@
     <ClCompile Include="Font.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="FaceSteering.cpp">
-      <Filter>Source Files\Steering</Filter>
-    </ClCompile>
-    <ClCompile Include="WanderSteering.cpp">
-      <Filter>Source Files\Steering</Filter>
-    </ClCompile>
-    <ClCompile Include="Arrive.cpp">
-      <Filter>Source Files\Steering</Filter>
-    </ClCompile>
-    <ClCompile Include="SeekSteering.cpp">
-      <Filter>Source Files\Steering</Filter>
-    </ClCompile>
-    <ClCompile Include="ArriveAndFace.cpp">
-      <Filter>Source Files\Steering</Filter>
-    </ClCompile>
-    <ClCompile Include="WanderAndChase.cpp">
-      <Filter>Source Files\Steering</Filter>
-    </ClCompile>
     <ClCompile Include="InputSystem.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
@@ -94,6 +76,32 @@
     <ClCompile Include="ExitGameMessage.cpp">
       <Filter>Source Files\Messaging</Filter>
     </ClCompile>
+    <ClCompile Include="FlockSteering.cpp">
+      <Filter>Source Files\Steering\Flocking</Filter>
+    </ClCompile>
+    <ClCompile Include="AllignSteering.cpp">
+      <Filter>Source Files\Steering\Flocking</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrive.cpp">
+      <Filter>Source Files\Steering\Steering Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="ArriveAndFace.cpp">
+      <Filter>Source Files\Steering\Steering Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="FaceSteering.cpp">
+      <Filter>Source Files\Steering\Steering Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="SeekSteering.cpp">
+      <Filter>Source Files\Steering\Steering Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="WanderAndChase.cpp">
+      <Filter>Source Files\Steering\Steering Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="WanderSteering.cpp">
+      <Filter>Source Files\Steering\Steering Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Cohesion.cpp" />
+    <ClCompile Include="Seperation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicsBuffer.h">
@@ -162,24 +170,6 @@
     <ClInclude Include="InputSystem.h">
       <Filter>Header Files\Input</Filter>
     </ClInclude>
-    <ClInclude Include="FaceSteering.h">
-      <Filter>Header Files\Steering</Filter>
-    </ClInclude>
-    <ClInclude Include="WanderSteering.h">
-      <Filter>Header Files\Steering</Filter>
-    </ClInclude>
-    <ClInclude Include="Arrive.h">
-      <Filter>Header Files\Steering</Filter>
-    </ClInclude>
-    <ClInclude Include="SeekSteering.h">
-      <Filter>Header Files\Steering</Filter>
-    </ClInclude>
-    <ClInclude Include="ArriveAndFace.h">
-      <Filter>Header Files\Steering</Filter>
-    </ClInclude>
-    <ClInclude Include="WanderAndChase.h">
-      <Filter>Header Files\Steering</Filter>
-    </ClInclude>
     <ClInclude Include="SpawnRandomEnemyMessage.h">
       <Filter>Header Files\Messaging</Filter>
     </ClInclude>
@@ -188,6 +178,36 @@
     </ClInclude>
     <ClInclude Include="ExitGameMessage.h">
       <Filter>Header Files\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="FlockSteering.h">
+      <Filter>Header Files\Steering\Flocking</Filter>
+    </ClInclude>
+    <ClInclude Include="Seperation.h">
+      <Filter>Header Files\Steering\Flocking</Filter>
+    </ClInclude>
+    <ClInclude Include="Cohesion.h">
+      <Filter>Header Files\Steering\Flocking</Filter>
+    </ClInclude>
+    <ClInclude Include="AllignSteering.h">
+      <Filter>Header Files\Steering\Flocking</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrive.h">
+      <Filter>Header Files\Steering\Seering Algorithims</Filter>
+    </ClInclude>
+    <ClInclude Include="ArriveAndFace.h">
+      <Filter>Header Files\Steering\Seering Algorithims</Filter>
+    </ClInclude>
+    <ClInclude Include="FaceSteering.h">
+      <Filter>Header Files\Steering\Seering Algorithims</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekSteering.h">
+      <Filter>Header Files\Steering\Seering Algorithims</Filter>
+    </ClInclude>
+    <ClInclude Include="WanderSteering.h">
+      <Filter>Header Files\Steering\Seering Algorithims</Filter>
+    </ClInclude>
+    <ClInclude Include="WanderAndChase.h">
+      <Filter>Header Files\Steering\Seering Algorithims</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +258,18 @@
     </Filter>
     <Filter Include="Source Files\Input">
       <UniqueIdentifier>{cd655b14-1cac-4d66-bed9-545ffde87319}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Steering\Flocking">
+      <UniqueIdentifier>{4cb07e36-4487-4611-9fe7-bff4376cbc71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Steering\Seering Algorithims">
+      <UniqueIdentifier>{218a10b5-b20a-4618-8ded-e6561acbe257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Steering\Flocking">
+      <UniqueIdentifier>{703ae6ba-3a5c-4428-a913-91e93355e708}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Steering\Steering Algorithms">
+      <UniqueIdentifier>{294f4881-db0a-469e-80ec-a578dd1121aa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

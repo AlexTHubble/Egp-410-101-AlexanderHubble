@@ -32,7 +32,7 @@ Steering * FaceSteering::getSteering()
 	float rotationSize = rotationToTarget - currentRotation;
 	float rotationSpeed = 0;
 
-	std::cout << currentRotation * RADIAN_TO_DEGREE << "\t" << rotationToTarget*RADIAN_TO_DEGREE << std::endl;
+	//std::cout << currentRotation * RADIAN_TO_DEGREE << "\t" << rotationToTarget*RADIAN_TO_DEGREE << std::endl;
 
 	if (abs(rotationSize) < mTargetRotationRadius * DEGREE_TO_RADIAN) //If facing target, stop rotation
 	{

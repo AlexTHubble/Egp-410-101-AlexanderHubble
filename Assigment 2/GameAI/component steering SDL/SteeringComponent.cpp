@@ -4,9 +4,10 @@
 #include "Arrive.h"
 #include "SeekSteering.h"
 #include "FaceSteering.h"
-#include "WanderSteering.h"
+//#include "WanderSteering.h"
 #include "ArriveAndFace.h"
 #include "WanderAndChase.h"
+#include "FlockSteering.h"
 
 SteeringComponent::SteeringComponent(const ComponentID& id, const ComponentID& physicsComponentID) 
 	:Component(id)
@@ -88,6 +89,14 @@ void SteeringComponent::setData(const SteeringData& data)
 			delete mpSteering;
 
 			mpSteering = new WanderAndChase(data.ownerID, data.targetLoc, data.targetID);
+
+			break;
+		}
+		case Steering::FLOCK:
+		{
+			delete mpSteering;
+
+			mpSteering = new Flock(data.ownerID, data.targetLoc, data.targetID);
 
 			break;
 		}

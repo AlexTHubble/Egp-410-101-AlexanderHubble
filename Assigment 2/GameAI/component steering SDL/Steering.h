@@ -7,12 +7,7 @@
 #include <Trackable.h>
 #include "defines.h"
 #include "PhysicsComponent.h"
-//#include "Arrive.h"
-//#include "SeekSteering.h"
-//#include "FaceSteering.h"
-//#include "WanderSteering.h"
-//#include "ArriveAndFace.h"
-
+//#include "UnitManager.h"
 
 
 class Steering: public Trackable
@@ -28,6 +23,10 @@ public:
 		WANDER,
 		ARRIVE_AND_FACE,
 		WANDER_AND_CHASE,
+		FLOCK,
+		ALLIGN,
+		COHEASION,
+		SEPERATION,
 		STOP
 	};
 
@@ -46,6 +45,8 @@ public:
 	const PhysicsData& getData() const { return mData; };
 	void update();
 	virtual Steering* getSteering() { return this; };//overridden by sub-classes
+	//void setUnitManager(UnitManager *unitManager) { }; //overridden by sub-classes that needs part
+
 protected:
 	SteeringType mType;
 	Vector2D mTargetLoc;

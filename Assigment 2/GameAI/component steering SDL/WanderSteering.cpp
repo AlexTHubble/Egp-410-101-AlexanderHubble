@@ -45,7 +45,7 @@ Steering * WanderSteering::getSteering()
 
 	data.acc = targetVelocity - data.vel;
 
-	std::cout << "Current wander target: " << mTarget.getX() << " " << mTarget.getY() << std::endl;
+	//std::cout << "Current wander target: " << mTarget.getX() << " " << mTarget.getY() << std::endl;
 
 	this->mData = data;
 	delete newSteering;
