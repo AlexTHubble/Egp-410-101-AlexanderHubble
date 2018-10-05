@@ -52,7 +52,7 @@ Vector2D Cohesion::getCohesion()
 	resultVector = Vector2D(resultVector.getX() - pOwner->getPositionComponent()->getPosition().getX(), 
 		resultVector.getY() - pOwner->getPositionComponent()->getPosition().getY());
 
-	resultVector.normalize();
+	//resultVector.normalize();
 
 	return resultVector;
 }

@@ -43,11 +43,24 @@ Steering * Flock::getSteering()
 
 	//data.acc.normalize();
 
-	tempX = data.vel.getX() + (allignVector.getX() * mAllignWeight) + (cohesionVector.getX() * mCohesionWeigth) + (seperationVector.getX() * mSeperationWeight);
-	tempY = data.vel.getY() + (allignVector.getY() * mAllignWeight) + (cohesionVector.getY() * mCohesionWeigth) + (seperationVector.getY() * mSeperationWeight);
+	allignVector *= mAllignWeight;
+	seperationVector *= mSeperationWeight;
+	cohesionVector *= mCohesionWeigth;
+
+	//allignVector.normalize();
+	//seperationVector.normalize();
+	//cohesionVector.normalize();
+
+	Vector2D newAcceleration = data.vel + allignVector + seperationVector + cohesionVector;
+	newAcceleration.normalize();
+
+	newAcceleration *= data.maxSpeed;
+
+	//tempX = data.vel.getX() + (allignVector.getX() * mAllignWeight) + (cohesionVector.getX() * mCohesionWeigth) + (seperationVector.getX() * mSeperationWeight);
+	//tempY = data.vel.getY() + (allignVector.getY() * mAllignWeight) + (cohesionVector.getY() * mCohesionWeigth) + (seperationVector.getY() * mSeperationWeight);
 
 
-	Vector2D newAcceleration = Vector2D(tempX, tempY);
+	//Vector2D newAcceleration = Vector2D(tempX, tempY);
 
 	//newVelocity.normalize();
 

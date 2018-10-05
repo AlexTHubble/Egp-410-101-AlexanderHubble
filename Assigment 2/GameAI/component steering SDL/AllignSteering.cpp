@@ -50,7 +50,7 @@ Vector2D Allign::getAlligment()
 	temp = resultVector.getY() / neighborCount;
 	resultVector.setY(temp);
 
-	resultVector.normalize();
+	//resultVector.normalize();
 
 	return resultVector;
 }

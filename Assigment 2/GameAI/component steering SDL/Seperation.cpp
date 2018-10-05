@@ -55,7 +55,7 @@ Vector2D Seperation::getSeperation()
 	temp *= -1;
 	resultVector.setY(temp);
 
-	resultVector.normalize();
+	//resultVector.normalize();
 
 	return resultVector;
 }
