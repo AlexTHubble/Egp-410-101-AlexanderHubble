@@ -21,8 +21,8 @@ protected:
 	Cohesion *mCohesionSteering;
 	WanderSteering *mWanderSteering;
 
-	float mAllignWeight = 0.2;
-	float mSeperationWeight = 0.4;
+	float mAllignWeight = 0.1;
+	float mSeperationWeight = 0.6;
 	float mCohesionWeigth = 0.3;
 	//UnitManager* mUnitManager;
 
