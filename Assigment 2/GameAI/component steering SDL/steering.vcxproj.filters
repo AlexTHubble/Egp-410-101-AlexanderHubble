@@ -100,9 +100,15 @@
     <ClCompile Include="WanderSteering.cpp">
       <Filter>Source Files\Steering\Steering Algorithms</Filter>
     </ClCompile>
-    <ClCompile Include="Cohesion.cpp" />
-    <ClCompile Include="Seperation.cpp" />
-    <ClCompile Include="LoadValues.cpp" />
+    <ClCompile Include="Cohesion.cpp">
+      <Filter>Source Files\Steering\Flocking</Filter>
+    </ClCompile>
+    <ClCompile Include="Seperation.cpp">
+      <Filter>Source Files\Steering\Flocking</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleValues.cpp">
+      <Filter>Source Files\Messaging</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicsBuffer.h">
@@ -210,7 +216,7 @@
     <ClInclude Include="WanderAndChase.h">
       <Filter>Header Files\Steering\Seering Algorithims</Filter>
     </ClInclude>
-    <ClInclude Include="LoadValues.h">
+    <ClInclude Include="HandleValues.h">
       <Filter>Header Files\Messaging</Filter>
     </ClInclude>
   </ItemGroup>

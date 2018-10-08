@@ -45,7 +45,17 @@ void InputSystem::update()
 		{
 			for (std::map<UnitID, Flock*>::iterator unit = mFlockMap.begin(); unit != mFlockMap.end(); unit++)
 			{
-				GameMessage* pMessage = new LoadValues(unit->second);
+				GameMessage* pMessage = new HandleValue(unit->second, false);
+				mpMessageManager->addMessage(pMessage, 0);
+			}
+
+		}
+
+		if (state[SDL_SCANCODE_S])
+		{
+			for (std::map<UnitID, Flock*>::iterator unit = mFlockMap.begin(); unit != mFlockMap.end(); unit++)
+			{
+				GameMessage* pMessage = new HandleValue(unit->second, true);
 				mpMessageManager->addMessage(pMessage, 0);
 			}
 
