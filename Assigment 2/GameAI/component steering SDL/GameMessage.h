@@ -11,7 +11,9 @@ enum MessageType
 	PLAYER_MOVETO_MESSAGE = 0,
 	SPAWN_RANDOM_ENEMEY = 1,
 	DELETE_RANDOM_ENEMY = 2,
-	END_GAME = 3
+	END_GAME = 3,
+	LOAD_DATA = 4,
+	SAVE_DATA = 5
 };
 
 class GameMessage: public Trackable

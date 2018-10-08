@@ -31,15 +31,6 @@ void InputSystem::update()
 
 	SDL_PumpEvents();
 
-	//if (SDL_GetMouseState(&x, &y) & SDL_BUTTON(SDL_BUTTON_LEFT))
-	//{
-	//	Vector2D pos(x, y);
-	//	GameMessage* pMessage = new PlayerMoveToMessage(pos);
-	//	mpMessageManager->addMessage(pMessage, 0);
-	//}
-
-
-
 	{
 		//get keyboard state
 		const Uint8 *state = SDL_GetKeyboardState(NULL);
@@ -48,6 +39,16 @@ void InputSystem::update()
 		{
 			GameMessage* pMessage = new SpawnRandomEnemyMessage(mpUnitManager,mpSpriteManager,mAiSpriteID, 10);
 			mpMessageManager->addMessage(pMessage, 0);
+		}
+
+		if (state[SDL_SCANCODE_L])
+		{
+			for (std::map<UnitID, Flock*>::iterator unit = mFlockMap.begin(); unit != mFlockMap.end(); unit++)
+			{
+				GameMessage* pMessage = new LoadValues(unit->second);
+				mpMessageManager->addMessage(pMessage, 0);
+			}
+
 		}
 
 		if (state[SDL_SCANCODE_D])

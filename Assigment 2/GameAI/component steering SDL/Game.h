@@ -4,6 +4,7 @@
 #include "PerformanceTracker.h"
 #include "Defines.h"
 #include <string>
+//#include "InputSystem.h"
 
 class GraphicsSystem;
 class GraphicsBuffer;
@@ -44,6 +45,7 @@ public:
 	inline GameMessageManager* getMessageManager() { return mpMessageManager; };
 	inline ComponentManager* getComponentManager() { return mpComponentManager; };
 	inline UnitManager* getUnitManager() { return mpUnitManager; };
+	inline InputSystem* getInputManager() { return mpInputSystem; };
 	inline Timer* getMasterTimer() const { return mpMasterTimer; };
 	inline double getCurrentTime() const { return mpMasterTimer->getElapsedTime(); };
 	void endGame()  { mShouldExit = true; }

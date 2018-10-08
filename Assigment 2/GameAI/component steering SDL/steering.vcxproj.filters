@@ -102,6 +102,7 @@
     </ClCompile>
     <ClCompile Include="Cohesion.cpp" />
     <ClCompile Include="Seperation.cpp" />
+    <ClCompile Include="LoadValues.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicsBuffer.h">
@@ -208,6 +209,9 @@
     </ClInclude>
     <ClInclude Include="WanderAndChase.h">
       <Filter>Header Files\Steering\Seering Algorithims</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadValues.h">
+      <Filter>Header Files\Messaging</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

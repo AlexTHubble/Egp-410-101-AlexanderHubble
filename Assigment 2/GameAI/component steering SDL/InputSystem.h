@@ -11,7 +11,10 @@
 #include "Game.h"
 #include "SpawnRandomEnemyMessage.h"
 #include "DeleteRandomUnitMessage.h"
+#include "LoadValues.h"
 #include "ExitGameMessage.h"
+//#include "FlockSteering.h"
+
 //#include "SpriteManager.h"
 //#include "UnitManager.h"
 
@@ -26,9 +29,15 @@ public:
 	void cleanup();
 	void update();
 
+	//void setFlockSteering(Flock *theSteering) { mpFlockSteering = theSteering; };
+	void addFlockSteering(Flock *theSteering, UnitID theID) { mFlockMap.insert(std::pair<UnitID,Flock*>(theID, theSteering)); }
+
 private:
 	GameMessageManager * mpMessageManager;
 	UnitManager * mpUnitManager;
 	SpriteManager * mpSpriteManager;
 	IDType mAiSpriteID;
+	//Flock *mpFlockSteering;
+
+	std::map<UnitID, Flock*> mFlockMap;
 };
