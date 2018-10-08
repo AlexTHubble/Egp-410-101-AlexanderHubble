@@ -16,7 +16,7 @@ Vector2D Allign::getAlligment()
 	std::map<UnitID, Unit*> mUnitMap = gpGame->getUnitManager()->getUnitMap(); //Gets the unit map from mUnitManager, this will act as our neigberhood
 	float temp;
 
-	Vector2D resultVector;
+	Vector2D resultVector = Vector2D(0,0);
 	int neighborCount = 0;
 
 	for (std::map<UnitID, Unit*>::iterator unit = mUnitMap.begin(); unit != mUnitMap.end(); unit++)
@@ -28,11 +28,13 @@ Vector2D Allign::getAlligment()
 
 			if (distance < mNeighborRadius)
 			{
-				temp = resultVector.getX() + unit->second->getPhysicsComponent()->getVelocity().getX();
-				resultVector.setX(temp);
+				//temp = resultVector.getX() + unit->second->getPhysicsComponent()->getVelocity().getX();
+				//resultVector.setX(temp);
 
-				temp = resultVector.getY() + unit->second->getPhysicsComponent()->getVelocity().getY();
-				resultVector.setY(temp);
+				//temp = resultVector.getY() + unit->second->getPhysicsComponent()->getVelocity().getY();
+				//resultVector.setY(temp);
+
+ 				resultVector += unit->second->getPhysicsComponent()->getData().vel;
 
 				neighborCount++;
 			}
@@ -44,11 +46,13 @@ Vector2D Allign::getAlligment()
 		return resultVector;
 	}
 
-	temp = resultVector.getX() / neighborCount;
-	resultVector.setX(temp);
+	//temp = resultVector.getX() / neighborCount;
+	//resultVector.setX(temp);
 
-	temp = resultVector.getY() / neighborCount;
-	resultVector.setY(temp);
+	//temp = resultVector.getY() / neighborCount;
+	//resultVector.setY(temp);
+
+	resultVector /= neighborCount;
 
 	//resultVector.normalize();
 

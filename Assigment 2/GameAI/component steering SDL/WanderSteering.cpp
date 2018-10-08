@@ -37,10 +37,6 @@ Steering * WanderSteering::getSteering()
 
 	mTarget = Vector2D(cos(mTargetOrientation), sin(mTargetOrientation));
 
-	//mTarget = pOwner->getPositionComponent()->getPosition() + (currentDirection * mWanderOffSet); //Calculate center of wander circle
-
-	//mTarget += Vector2D(cos(mTargetOrientation), sin(mTargetOrientation)); //NOTE: May be issue
-
 	mTargetLoc = pOwner->getPositionComponent()->getPosition() + currentDirection * mWanderOffSet;
 	mTargetLoc += mTarget * mWanderRadius;
 
@@ -49,17 +45,11 @@ Steering * WanderSteering::getSteering()
 	Steering * newSteering = mpFaceSteering->getSteering(); //NOTE: Figure out how to get working wihtout making getSteering public
 	PhysicsData steeringPhysics = newSteering->getData();
 
-	//data = newSteering->getData();
-
 	data.rotAcc = steeringPhysics.rotAcc;
 	data.rotVel = steeringPhysics.rotVel;
 
-	//Vector2D direction = mTargetLoc - pOwner->getPositionComponent()->getPosition();
-	//Vector2D targetVelocity = direction * data.maxSpeed;
 
 	data.acc = currentDirection * data.maxSpeed;
-
-
 
 	this->mData = data;
 	delete newSteering;

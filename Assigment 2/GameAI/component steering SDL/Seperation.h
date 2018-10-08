@@ -10,5 +10,5 @@ public:
 	Vector2D getSeperation();
 protected:
 
-	float mNeighborRadius = 200;
+	float mNeighborRadius = 50;
 };

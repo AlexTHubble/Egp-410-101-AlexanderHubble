@@ -21,9 +21,18 @@ protected:
 	Cohesion *mCohesionSteering;
 	WanderSteering *mWanderSteering;
 
-	float mAllignWeight = 0.1;
-	float mSeperationWeight = 0.6;
-	float mCohesionWeigth = 0.3;
-	//UnitManager* mUnitManager;
+	float mAllignWeight = 0.4;
+	float mSeperationWeight = 1.0;
+	float mCohesionWeigth = 0.6;
+	float mWanderWeight = 0.3;
+
+	float mWanderOffSet = 100.0f;
+	float mWanderRadius = 50.0f;
+	float mWanderRate = 0.8f;
+	float mWanderOrientation = 0;
+	float mTargetOrientation = 0;
+	Vector2D mTarget;
+
+	Steering* mpFaceSteering;
 
 };

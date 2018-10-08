@@ -10,5 +10,5 @@ public:
 	Vector2D getAlligment();
 protected:
 
-	int mNeighborRadius = 100;
+	int mNeighborRadius = 300;
 };
