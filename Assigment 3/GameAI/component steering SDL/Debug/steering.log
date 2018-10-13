@@ -1,0 +1,12 @@
+﻿  HandleValues.cpp
+c:\users\ahubb\documents\github\egp-410-\assigment 2\gameai\component steering sdl\seperation.h(11): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\users\ahubb\documents\github\egp-410-\assigment 2\gameai\component steering sdl\seperation.h(12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ahubb\documents\github\egp-410-\assigment 2\gameai\component steering sdl\cohesion.h(12): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\users\ahubb\documents\github\egp-410-\assigment 2\gameai\component steering sdl\cohesion.h(13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ahubb\documents\github\egp-410-\assigment 2\gameai\component steering sdl\flocksteering.h(59): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\ahubb\documents\github\egp-410-\assigment 2\gameai\component steering sdl\flocksteering.h(61): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\ahubb\documents\github\egp-410-\assigment 2\gameai\component steering sdl\flocksteering.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\ahubb\documents\github\egp-410-\assigment 2\gameai\component steering sdl\handlevalues.cpp(94): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\ahubb\documents\github\egp-410-\assigment 2\gameai\component steering sdl\handlevalues.cpp(100): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\ahubb\documents\github\egp-410-\assigment 2\gameai\component steering sdl\handlevalues.cpp(106): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  steering.vcxproj -> C:\Users\ahubb\Documents\GitHub\Egp-410-\Assigment 2\GameAI\component steering SDL\Debug\steering.exe
