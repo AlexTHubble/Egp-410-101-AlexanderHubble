@@ -18,6 +18,7 @@
 #include "GridVisualizer.h"
 #include "DebugDisplay.h"
 #include "PathfindingDebugContent.h"
+#include "DijsktraPathfinder.h"
 
 #include <SDL.h>
 #include <fstream>
@@ -62,7 +63,7 @@ bool GameApp::init()
 	//init the nodes and connections
 	mpGridGraph->init();
 
-	mpPathfinder = new DepthFirstPathfinder(mpGridGraph);
+	mpPathfinder = new Dijsktra(mpGridGraph);
 
 	//load buffers
 	mpGraphicsBufferManager->loadBuffer(mBackgroundBufferID, "wallpaper.bmp");
