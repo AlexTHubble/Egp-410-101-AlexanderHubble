@@ -1,3 +1,0 @@
-﻿  DijsktraPathfinder.cpp
-c:\users\ahubb\documents\github\egp-410-\assigment 3\gameai\pathfinding\game\dijsktrapathfinder.cpp(135): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  pathfinding.vcxproj -> C:\Users\ahubb\Documents\GitHub\Egp-410-\Assigment 3\GameAI\component steering SDL\Debug\pathfinding.exe

@@ -4,7 +4,4 @@
     <LocalDebuggerEnvironment>PATH=..\..\..\external libs\SDL2\SDL\lib\win32;%PATH%</LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
-  <PropertyGroup>
-    <ShowAllFiles>true</ShowAllFiles>
-  </PropertyGroup>
 </Project>
